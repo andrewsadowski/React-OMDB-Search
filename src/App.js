@@ -73,11 +73,11 @@ class App extends Component {
         </form>
         <div style={styles.containerStyles}>
           <p style={styles.pStyles}>{this.state.movieTitle}</p>
+          <p style={styles.pStyles}>{this.state.movieDescription}</p>
           <img
             src={this.state.moviePoster}
             style={styles.imgStyles}
           />
-          <p style={styles.pStyles}>{this.state.movieDescription}</p>
         </div>
       </div>
     );
