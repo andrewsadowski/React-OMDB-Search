@@ -63,8 +63,9 @@ class App extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <h1>Search for a movie</h1>
+          <h1 style={styles.searchHeader}>Search for a movie</h1>
           <input
+            style={styles.inputStyle}
             type="text"
             value={this.state.searchTerm}
             onChange={this.handleChange}
@@ -72,8 +73,10 @@ class App extends Component {
           <input type="submit" />
         </form>
         <div style={styles.containerStyles}>
-          <p style={styles.pStyles}>{this.state.movieTitle}</p>
-          <p style={styles.pStyles}>{this.state.movieDescription}</p>
+          <p style={styles.titleStyles}>{this.state.movieTitle}</p>
+          <p style={styles.desStyles}>
+            {this.state.movieDescription}
+          </p>
           <img
             src={this.state.moviePoster}
             style={styles.imgStyles}
@@ -85,29 +88,26 @@ class App extends Component {
 }
 
 const styles = {
-  pStyles: {
+  searchHeader: {
+    textAlign: 'center'
+  },
+  inputStyle: {},
+  titleStyles: {
     fontSize: 20,
-    flexWrap: 'wrap',
     flex: 1
+  },
+  desStyles: {
+    alignSelf: 'center'
   },
   imgStyles: {
-    flex: 1
+    alignSelf: 'flex-end'
   },
-  desStyles: {},
-  textContainerStyle: {
+  containerStyles: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-around',
-    borderRadius: 2,
-    borderWidth: 1,
-    borderColor: '#007aff',
-    borderBottomWidth: 0
+    justifyContent: 'center'
   },
-  imgContainerStyle: {
-    borderRadius: 1,
-    borderWidth: 0.5,
-    borderColor: 'black'
-  }
+  imgContainerStyle: {}
 };
 
 export default App;
