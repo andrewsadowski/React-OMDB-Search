@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import axios from 'axios';
-import InputForm from './components/InputForm';
 import MovieDetail from './components/MovieDetail';
+import SearchInput from './components/SearchInput';
 import './App.css';
 
 class App extends Component {
