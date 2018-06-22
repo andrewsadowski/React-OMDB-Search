@@ -1,32 +1,39 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class SearchInput extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      search: ''
+      search: ""
     };
   }
+  submitHandler(e) {
+    e.preventDefault();
+    this.props.handlerFromParent(this.state.search);
+    this.setState({
+      search: ""
+    });
+  }
   handleChange(e) {
+    e.preventDefault();
     this.setState({
       search: e.target.value
     });
   }
 
-  render(props) {
+  render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.submitHandler.bind(this)}>
           <input
             type="text"
             onChange={this.handleChange.bind(this)}
-            onSubmit={this.props.handleSearch}
             value={this.state.search}
             placeholder="Search for a movie..."
           />
-          {this.state.search}
           <input type="submit" />
         </form>
+        {this.state.search}
       </div>
     );
   }
