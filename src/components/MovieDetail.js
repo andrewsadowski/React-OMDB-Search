@@ -9,3 +9,5 @@ class MovieDetail extends Component {
     );
   }
 }
+
+export default MovieDetail;

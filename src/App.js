@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import axios from 'axios';
+import InputForm from './components/InputForm';
+import MovieDetail from './components/MovieDetail';
 import './App.css';
 
 class App extends Component {
@@ -12,7 +14,7 @@ class App extends Component {
       moviePoster: '',
       movieDescription: ''
     };
-    this.requestMovie = this.requestMovie.bind(this);
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -63,15 +65,15 @@ class App extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <h1 style={styles.searchHeader}>Search for a movie</h1>
+          <h1>Search for a movie</h1>
           <input
-            style={styles.inputStyle}
             type="text"
             value={this.state.searchTerm}
             onChange={this.handleChange}
           />
           <input type="submit" />
         </form>
+        <MovieDetail props={this.state} />
         <div style={styles.containerStyles}>
           <p style={styles.titleStyles}>{this.state.movieTitle}</p>
           <p style={styles.desStyles}>
@@ -111,3 +113,14 @@ const styles = {
 };
 
 export default App;
+
+// <form onSubmit={this.handleSubmit}>
+// <h1 style={styles.searchHeader}>Search for a movie</h1>
+// <input
+//   style={styles.inputStyle}
+//   type="text"
+//   value={this.state.searchTerm}
+//   onChange={this.handleChange}
+// />
+// <input type="submit" />
+// </form>
