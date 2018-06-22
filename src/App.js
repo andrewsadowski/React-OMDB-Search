@@ -64,6 +64,7 @@ class App extends Component {
   render() {
     return (
       <div>
+      <InputSearch />
         <form onSubmit={this.handleSubmit}>
           <h1>Search for a movie</h1>
           <input
