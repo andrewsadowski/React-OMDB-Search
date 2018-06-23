@@ -24,6 +24,24 @@ class MovieRequest extends Component {
       .catch(err => console.log(err));
   }
 
+  getMovie(props) {
+    axios
+      .get(
+        `https://www.omdbapi.com/?apikey=16cd9897&t=${
+          this.props.movie
+        }`
+      )
+      .then(res => {
+        console.log(res);
+        this.setState({
+          movieTitle: res.data.Title,
+          moviePoster: res.data.Poster,
+          movieDescription: res.data.Plot
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
   renderMovie() {
     if (this.props.movie === '') {
       return (
