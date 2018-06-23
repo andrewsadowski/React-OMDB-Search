@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component } from 'react';
+import axios from 'axios';
 
 class MovieRequest extends Component {
   constructor() {
     super();
     this.state = {
-      movieTitle: "",
-      moviePoster: "",
-      movieDescription: ""
+      movieTitle: '',
+      moviePoster: '',
+      movieDescription: ''
     };
   }
   componentDidMount() {
@@ -27,9 +27,11 @@ class MovieRequest extends Component {
   render() {
     return (
       <div>
+        <p>Movie Title as props: {this.props.movie}</p>
+        <p>{this.props.movie}</p>
         <p>{this.state.movieTitle}</p>
         <p>{this.state.movieDescription}</p>
-        <img src={this.state.moviePoster} />
+        <img src={this.state.moviePoster} alt="moviePoster" />
       </div>
     );
   }
