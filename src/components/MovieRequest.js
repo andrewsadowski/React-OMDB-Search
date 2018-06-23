@@ -24,16 +24,31 @@ class MovieRequest extends Component {
       .catch(err => console.log(err));
   }
 
+  renderMovie() {
+    if (this.props.movie === '') {
+      return (
+        <div>
+          <p>{this.props.movie}</p>
+          <p>{this.state.movieTitle}</p>
+          <p>{this.state.movieDescription}</p>
+          <img src={this.state.moviePoster} alt="moviePoster" />
+        </div>
+      );
+    } else {
+      this.getMovie();
+      return (
+        <div>
+          <p>{this.props.movie}</p>
+          <p>{this.state.movieTitle}</p>
+          <p>{this.state.movieDescription}</p>
+          <img src={this.state.moviePoster} alt="moviePoster" />
+        </div>
+      );
+    }
+  }
+
   render() {
-    return (
-      <div>
-        <p>Movie Title as props: {this.props.movie}</p>
-        <p>{this.props.movie}</p>
-        <p>{this.state.movieTitle}</p>
-        <p>{this.state.movieDescription}</p>
-        <img src={this.state.moviePoster} alt="moviePoster" />
-      </div>
-    );
+    return <div>{this.renderMovie}</div>;
   }
 }
 
