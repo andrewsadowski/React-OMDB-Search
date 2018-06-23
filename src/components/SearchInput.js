@@ -1,19 +1,21 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class SearchInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: ""
+      search: ''
     };
   }
+
   submitHandler(e) {
     e.preventDefault();
     this.props.handlerFromParent(this.state.search);
     this.setState({
-      search: ""
+      search: ''
     });
   }
+
   handleChange(e) {
     e.preventDefault();
     this.setState({
