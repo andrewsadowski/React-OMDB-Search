@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import SearchInput from './components/SearchInput';
+import MovieRequest from './components/MovieRequest';
 
 class App extends Component {
   state = {
