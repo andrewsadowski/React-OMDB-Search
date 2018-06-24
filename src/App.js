@@ -18,7 +18,6 @@ class App extends Component {
           handlerFromParent={this.handleSearch.bind(this)}
         />
         <MovieRequest movie={this.state.term} />
-        <h1>State from parent:{this.state.term}</h1>
       </div>
     );
   }
