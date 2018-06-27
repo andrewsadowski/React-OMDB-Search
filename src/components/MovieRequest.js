@@ -84,4 +84,19 @@ class MovieRequest extends Component {
   }
 }
 
+const styles = {
+  movieInfoContainer: {
+    display: flex;
+  },
+  moviePoster: {
+    display: flex;
+  },
+  movieDescription: {
+
+  },
+  movieTitle: {
+    
+  }
+}
+
 export default MovieRequest;
