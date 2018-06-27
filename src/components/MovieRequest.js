@@ -48,25 +48,39 @@ class MovieRequest extends Component {
         <div>
           <p className="movieTitle">{this.props.movie}</p>
           <p className="movieTitle">{this.state.movieTitle}</p>
-          <p className="movieDescription">{this.state.movieDescription}</p>
-          <img className="moviePoster" src={this.state.moviePoster} alt="moviePoster" />
+          <p className="movieDescription">
+            {this.state.movieDescription}
+          </p>
+          <img
+            className="moviePoster"
+            src={this.state.moviePoster}
+            alt="moviePoster"
+          />
         </div>
       );
     } else {
       this.getMovie();
       return (
         <div>
-          <p>{this.props.movie}</p>
-          <p>{this.state.movieTitle}</p>
-          <p>{this.state.movieDescription}</p>
-          <img src={this.state.moviePoster} alt="moviePoster" />
+          <p className="movieTitle">{this.props.movie}</p>
+          <p className="movieTitle">{this.state.movieTitle}</p>
+          <p className="movieDescription">
+            {this.state.movieDescription}
+          </p>
+          <img
+            className="moviePoster"
+            src={this.state.moviePoster}
+            alt="moviePoster"
+          />
         </div>
       );
     }
   }
 
   render() {
-    return <div>{this.renderMovie}</div>;
+    return (
+      <div className="movieInfoContainer">{this.renderMovie}</div>
+    );
   }
 }
 
