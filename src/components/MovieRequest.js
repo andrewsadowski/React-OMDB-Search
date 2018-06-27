@@ -46,10 +46,10 @@ class MovieRequest extends Component {
     if (this.props.movie === '') {
       return (
         <div>
-          <p>{this.props.movie}</p>
-          <p>{this.state.movieTitle}</p>
-          <p>{this.state.movieDescription}</p>
-          <img src={this.state.moviePoster} alt="moviePoster" />
+          <p className="movieTitle">{this.props.movie}</p>
+          <p className="movieTitle">{this.state.movieTitle}</p>
+          <p className="movieDescription">{this.state.movieDescription}</p>
+          <img className="moviePoster" src={this.state.moviePoster} alt="moviePoster" />
         </div>
       );
     } else {
