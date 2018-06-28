@@ -9,6 +9,8 @@ class MovieRequest extends Component {
       moviePoster: '',
       movieDescription: ''
     };
+    this.renderMovie = this.renderMovie.bind(this);
+    this.getMovie = this.getMovie.bind(this);
   }
   componentDidMount() {
     axios
@@ -78,25 +80,24 @@ class MovieRequest extends Component {
   }
 
   render() {
+    this.renderMovie();
     return (
-      <div className="movieInfoContainer">{this.renderMovie}</div>
+      <div className="movieInfoContainer">
+        <div>{this.renderMovie()}</div>
+      </div>
     );
   }
 }
 
 const styles = {
   movieInfoContainer: {
-    display: flex;
+    display: 'flex'
   },
   moviePoster: {
-    display: flex;
+    display: 'flex'
   },
-  movieDescription: {
-
-  },
-  movieTitle: {
-    
-  }
-}
+  movieDescription: {},
+  movieTitle: {}
+};
 
 export default MovieRequest;

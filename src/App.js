@@ -1,23 +1,70 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 import SearchInput from './components/SearchInput';
 import MovieRequest from './components/MovieRequest';
 
+import './styles.css';
+
 class App extends Component {
-  state = {
-    term: ''
-  };
+  constructor() {
+    super();
+    this.state = {
+      term: '',
+      movieTitle: '',
+      movieDescription: '',
+      moviePoster: ''
+    };
+    this.getMovie = this.getMovie.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
+  }
+
+  componentDidMount() {
+    axios
+      .get(`https://www.omdbapi.com/?apikey=16cd9897&t=caddyshack`)
+      .then(res => {
+        console.log(res);
+        this.setState({
+          term: 'caddyshack',
+          movieTitle: res.data.Title,
+          moviePoster: res.data.Poster,
+          movieDescription: res.data.Plot
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
+  getMovie() {
+    axios
+      .get(`https://www.omdbapi.com/?apikey=16cd9897&t=${this.state.term}`)
+      .then(res => {
+        console.log(res);
+        this.setState({
+          movieTitle: res.data.Title,
+          moviePoster: res.data.Poster,
+          movieDescription: res.data.Plot
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
   handleSearch(data) {
     this.setState({ term: data });
+    this.getMovie();
   }
 
   render() {
     return (
       <div className="App">
         <SearchInput
-          handlerFromParent={this.handleSearch.bind(this)}
+          handlerFromParent={this.handleSearch}
+          onSubmit={this.getMovie}
         />
-        <MovieRequest movie={this.state.term} />
+        <MovieRequest
+          movieTitle={this.state.movieTitle}
+          movieDescription={this.state.movieDescription}
+          moviePoster={this.state.moviePoster}
+        />
       </div>
     );
   }
