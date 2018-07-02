@@ -1,20 +1,70 @@
-import React from 'react';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import axios from 'axios';
+import SearchInput from './components/SearchInput';
+import MovieRequest from './components/MovieRequest';
 
-const MovieRequest = ({
-  movieTitle,
-  movieDescription,
-  moviePoster
-}) => {
-  return (
-    <div>
-      <p>{movieTitle}</p>
-      <p>{movieDescription}</p>
-      <img src={moviePoster} alt="moviePoster" />
-    </div>
-  );
-};
+import './styles.css';
 
-export default MovieRequest;
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      term: '',
+      movieTitle: 'Caddyshack',
+      movieDescription:
+        'An exclusive golf course has to deal with a brash new member and a destructive dancing gopher.',
+      moviePoster:
+        'https://ia.media-imdb.com/images/M/MV5BY2I1NWE2NzctNzNkYS00Nzg5LWEwZTQtN2I3Nzk3MTQwMDY2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg'
+    };
+  }
+
+  getMovie = () => {
+    if (this.state.term === '') {
+      return (
+        <div>
+          <h2>Please Search for a movie!</h2>
+        </div>
+      );
+    } else {
+      axios
+        .get(
+          `https://www.omdbapi.com/?apikey=16cd9897&t=${
+            this.state.term
+          }`
+        )
+        .then(res => {
+          console.log(res);
+          this.setState({
+            movieTitle: res.data.Title,
+            moviePoster: res.data.Poster,
+            movieDescription: res.data.Plot
+          });
+        })
+        .catch(err => console.log(err));
+    }
+  };
+
+  handleSearch = term => {
+    this.setState({ term });
+    // this.getMovie();
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <SearchInput handleSearch={this.handleSearch} />
+        <MovieRequest
+          movieTitle={this.state.movieTitle}
+          movieDescription={this.state.movieDescription}
+          moviePoster={this.state.moviePoster}
+        />
+      </div>
+    );
+  }
+}
+
+export default App;
 
 // import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
