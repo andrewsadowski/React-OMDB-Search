@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import SearchInput from './components/SearchInput';
 import MovieRequest from './components/MovieRequest';
-
-import './styles.css';
 
 class App extends Component {
   constructor() {
@@ -20,34 +17,26 @@ class App extends Component {
   }
 
   getMovie = () => {
-    if (this.state.term === '') {
-      return (
-        <div>
-          <h2>Please Search for a movie!</h2>
-        </div>
-      );
-    } else {
-      axios
-        .get(
-          `https://www.omdbapi.com/?apikey=16cd9897&t=${
-            this.state.term
-          }`
-        )
-        .then(res => {
-          console.log(res);
-          this.setState({
-            movieTitle: res.data.Title,
-            moviePoster: res.data.Poster,
-            movieDescription: res.data.Plot
-          });
-        })
-        .catch(err => console.log(err));
-    }
+    axios
+      .get(
+        `https://www.omdbapi.com/?apikey=16cd9897&t=${
+          this.state.term
+        }`
+      )
+      .then(res => {
+        console.log(res);
+        this.setState({
+          movieTitle: res.data.Title,
+          moviePoster: res.data.Poster,
+          movieDescription: res.data.Plot
+        });
+      })
+      .catch(err => console.log(err));
   };
 
   handleSearch = term => {
     this.setState({ term });
-    // this.getMovie();
+    this.getMovie();
   };
 
   render() {

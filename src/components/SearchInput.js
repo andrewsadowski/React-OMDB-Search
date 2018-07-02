@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class SearchInput extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class SearchInput extends Component {
 
   render() {
     return (
-      <form onSubmit={this.getSearch.bind(this)}>
+      <form onSubmit={this.getSearch}>
         <input
           type="text"
           name="movieSearch"
@@ -30,7 +30,6 @@ class SearchInput extends Component {
 }
 
 export default SearchInput;
-
 
 // import React, { Component } from 'react';
 
