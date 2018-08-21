@@ -1,18 +1,20 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import SearchInput from './components/SearchInput';
-import MovieRequest from './components/MovieRequest';
+import React, { Component } from "react";
+import axios from "axios";
+import SearchInput from "./components/SearchInput";
+import MovieRequest from "./components/MovieRequest";
+
+import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      term: '',
-      movieTitle: 'Caddyshack',
+      term: "",
+      movieTitle: "Caddyshack",
       movieDescription:
-        'An exclusive golf course has to deal with a brash new member and a destructive dancing gopher.',
+        "An exclusive golf course has to deal with a brash new member and a destructive dancing gopher.",
       moviePoster:
-        'https://ia.media-imdb.com/images/M/MV5BY2I1NWE2NzctNzNkYS00Nzg5LWEwZTQtN2I3Nzk3MTQwMDY2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg'
+        "https://ia.media-imdb.com/images/M/MV5BY2I1NWE2NzctNzNkYS00Nzg5LWEwZTQtN2I3Nzk3MTQwMDY2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
     };
   }
 
@@ -42,7 +44,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SearchInput handleSearch={this.handleSearch} />
+        <SearchInput
+          className="input-container"
+          handleSearch={this.handleSearch}
+        />
         <MovieRequest
           movieTitle={this.state.movieTitle}
           movieDescription={this.state.movieDescription}

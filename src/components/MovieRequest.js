@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const MovieRequest = ({
   movieTitle,
@@ -6,10 +6,16 @@ const MovieRequest = ({
   moviePoster
 }) => {
   return (
-    <div>
-      <p>{movieTitle}</p>
-      <p>{movieDescription}</p>
-      <img src={moviePoster} alt="moviePoster" />
+    <div className="movie-container">
+      <p className="movie-title">{movieTitle}</p>
+      <p className="movie-description">
+        {movieDescription}
+      </p>
+      <img
+        className="movie-image"
+        src={moviePoster}
+        alt="moviePoster"
+      />
     </div>
   );
 };
