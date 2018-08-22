@@ -1,4 +1,5 @@
 import React from "react";
+import './MovieRequest.css'
 
 const MovieRequest = ({
   movieTitle,
