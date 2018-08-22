@@ -1,5 +1,23 @@
-.movie-container {}
+.movie-container {
+  border: solid 1px black;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr auto auto 1fr;
+  grid-template-rows: repeat(3, auto);
+}
 
-.movie-title {}
+.movie-title {
+  grid-column: 2 / span 2;
+}
 
-.movie-description {}
+.movie-description {
+  grid-column: 2;
+  grid-row-start: 2;
+  width: 150px;
+}
+
+.movie-image {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  justify-self: end;
+}
