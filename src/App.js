@@ -18,12 +18,11 @@ class App extends Component {
     };
   }
 
-  getMovie = () => {
+  getMovie = term => {
+    console.log("getmovie", term);
     axios
       .get(
-        `https://www.omdbapi.com/?apikey=16cd9897&t=${
-          this.state.term
-        }`
+        `https://www.omdbapi.com/?apikey=16cd9897&t=${term}`
       )
       .then(res => {
         console.log(res);
@@ -38,7 +37,7 @@ class App extends Component {
 
   handleSearch = term => {
     this.setState({ term });
-    this.getMovie();
+    this.getMovie(term);
   };
 
   render() {
