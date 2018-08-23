@@ -6,9 +6,15 @@
   grid-template-rows: repeat(3, auto);
 }
 
+.movie-title .movie-description {
+  font-family: 'Nunito', 'Helvetica Neue', 'Helvetica', Arial,
+    sans-serif;
+}
+
 .movie-title {
   grid-column: 2 / span 2;
-  line-height: 3.8;
+  font-size: 18px;
+  letter-spacing: 1.5px;
 }
 
 .movie-description {
