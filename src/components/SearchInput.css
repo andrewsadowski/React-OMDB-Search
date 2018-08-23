@@ -8,4 +8,9 @@
   justify-self: center;
 }
 
-.input-search {}
+.input-search input[type='submit'] {
+  color: #0099cc;
+  background: transparent;
+  border: 2px solid #0099cc;
+  border-radius: 6px;
+}
