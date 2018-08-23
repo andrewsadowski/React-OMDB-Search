@@ -16,14 +16,19 @@ class SearchInput extends Component {
 
   render() {
     return (
-      <form onSubmit={this.getSearch}>
+      <form className="form-container" onSubmit={this.getSearch}>
         <input
+          className="input-container"
           type="text"
           name="movieSearch"
           ref={this.searchRef}
           placeholder="Search for a movie..."
         />
-        <input type="submit" />
+        <input
+          className="input-search"
+          value="Submit"
+          type="submit"
+        />
       </form>
     );
   }
