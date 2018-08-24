@@ -11,8 +11,9 @@ const MovieCard = ({
   return (
     <div className="movie-container">
       <p className="movie-title">{movieTitle}</p>
-      <p className="movie-description">{movieDescription}</p>
-      <p className="movie-year">{movieYear}</p>
+      <p className="movie-description">Plot: {movieDescription}</p>
+      <p className="movie-year">Released: {movieYear}</p>
+      <p className="movie-director">Director: {movieDirector}</p>
       <img
         className="movie-image"
         src={moviePoster}
