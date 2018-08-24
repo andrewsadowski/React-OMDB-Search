@@ -11,6 +11,8 @@ class App extends Component {
     this.state = {
       term: '',
       movieTitle: 'Caddyshack',
+      movieDirector: 'Harold Ramis',
+      movieYear: '1981',
       movieDescription:
         'An exclusive golf course has to deal with a brash new member and a destructive dancing gopher.',
       moviePoster:
@@ -30,6 +32,8 @@ class App extends Component {
         console.log(res);
         this.setState({
           movieTitle: res.data.Title,
+          movieDirector: res.data.Director,
+          movieYear: res.data.Year,
           moviePoster: res.data.Poster,
           movieDescription: res.data.Plot
         });
