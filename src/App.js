@@ -56,6 +56,8 @@ class App extends Component {
         />
         <MovieRequest
           movieTitle={this.state.movieTitle}
+          movieYear={this.state.movieYear}
+          movieDirector={this.state.movieDirector}
           movieDescription={this.state.movieDescription}
           moviePoster={this.state.moviePoster}
         />
