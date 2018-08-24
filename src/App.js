@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SearchInput from './components/SearchInput';
-import MovieRequest from './components/MovieRequest';
+import MovieCard from './components/MovieCard';
 
 import './App.css';
 
@@ -54,7 +54,7 @@ class App extends Component {
           className="input-container"
           handleSearch={this.handleSearch}
         />
-        <MovieRequest
+        <MovieCard
           movieTitle={this.state.movieTitle}
           movieYear={this.state.movieYear}
           movieDirector={this.state.movieDirector}
