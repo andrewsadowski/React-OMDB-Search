@@ -1,5 +1,5 @@
-import React from 'react';
-import './MovieCard.css';
+import React from "react";
+import "./MovieCard.css";
 
 const MovieCard = ({
   movieTitle,
@@ -11,9 +11,17 @@ const MovieCard = ({
   return (
     <div className="movie-container">
       <p className="movie-title">{movieTitle}</p>
-      <p className="movie-description">Plot: {movieDescription}</p>
-      <p className="movie-year">Released: {movieYear}</p>
-      <p className="movie-director">Director: {movieDirector}</p>
+      <p className="movie-description">
+        Plot:
+        <br /> {movieDescription}
+      </p>
+      <p className="movie-year">
+        Released: <br /> {movieYear}
+      </p>
+      <p className="movie-director">
+        Director: <br />
+        {movieDirector}
+      </p>
       <img
         className="movie-image"
         src={moviePoster}
