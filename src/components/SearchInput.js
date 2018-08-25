@@ -8,10 +8,10 @@ class SearchInput extends Component {
 
   getSearch = e => {
     e.preventDefault();
-
-    const search = this.searchRef.current.value;
+    let search = this.searchRef.current.value;
     console.log(search);
     this.props.handleSearch(search);
+    this.searchRef.current.value = null;
   };
 
   render() {
@@ -23,11 +23,6 @@ class SearchInput extends Component {
           name="movieSearch"
           ref={this.searchRef}
           placeholder="Search for a movie..."
-        />
-        <input
-          className="input-search"
-          value="Submit"
-          type="submit"
         />
       </form>
     );
