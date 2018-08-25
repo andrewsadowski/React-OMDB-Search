@@ -6,7 +6,7 @@
 }
 
 .input-container {
-  width: 500px;
+  width: 100%;
   margin: 50px auto;
   position: relative;
 }
@@ -15,9 +15,8 @@ input {
   height: 60px;
   width: 100%;
   min-width: 100%;
-  padding-left: 100px;
   border-radius: 0;
-  line-height: 70px;
+  line-height: 50px;
   background-color: transparent;
   color: black;
   font-size: 30px;
@@ -25,9 +24,10 @@ input {
   outline: none;
   border-bottom: 3px solid #333333;
   font-family: Roboto Slab, sans-serif;
+  text-indent: 10px;
 }
 
-.input-highlight {
+/* .input-highlight {
   font-size: 30px;
   line-height: 70px;
   font-family: Roboto Slab, sans-serif;
@@ -37,4 +37,4 @@ input {
   left: 0;
   bottom: 0;
   height: 0;
-}
+} */

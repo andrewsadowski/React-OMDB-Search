@@ -30,6 +30,7 @@
   grid-row-start: 2;
   width: 150px;
   padding: 10px;
+  justify-self: start !important;
 }
 
 .movie-director {
@@ -41,5 +42,4 @@
 .movie-image {
   grid-column: 3 / 4;
   grid-row: 2 / span 2;
-  justify-self: end;
 }
