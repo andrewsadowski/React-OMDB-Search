@@ -1,5 +1,4 @@
 .movie-container {
-  font-family: 'Lobster', cursive;
   border: solid 10px black;
   border-width: 100%;
   display: grid;
@@ -17,11 +16,12 @@
 }
 
 .movie-title .movie-description {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Righteous', cursive;
 }
 
 .movie-title {
-  font-size: 25px;
+  font-size: 35px;
+  font-family: 'Righteous', cursive;
   grid-column: 2 / span 2;
   letter-spacing: 1.5px;
 }
@@ -36,7 +36,6 @@
   grid-row-start: 2;
   width: 150px;
   padding: 10px;
-  justify-self: start !important;
 }
 
 .movie-director {

@@ -3,17 +3,17 @@
   justify-content: center;
   text-align: center;
   border-radius: 0;
-  background: #D3CCE3;
+  background: #d3cce3;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);
+  background: -webkit-linear-gradient(to right, #e9e4f0, #d3cce3);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #E9E4F0, #D3CCE3);
+  background: linear-gradient(to right, #e9e4f0, #d3cce3);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .input-container {
   width: 100%;
-  margin: 50px auto;
+  margin: 1px auto;
   position: relative;
 }
 
@@ -29,8 +29,8 @@ input {
   border: none;
   outline: none;
   border-bottom: 3px solid #333333;
-  font-family: Roboto Slab, sans-serif;
-  text-indent: 10px;
+  font-family: 'Space Mono', monospace;
+  text-indent: 20px;
 }
 
 /* .input-highlight {
