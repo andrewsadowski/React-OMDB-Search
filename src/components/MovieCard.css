@@ -1,6 +1,7 @@
 .movie-container {
   border: solid 10px black;
   border-width: 100%;
+  font-family: 'Domine', serif;
   display: grid;
   box-sizing: border-box;
   justify-content: center;
@@ -16,12 +17,11 @@
 }
 
 .movie-title .movie-description {
-  font-family: 'Righteous', cursive;
+  font-family: 'Domine', serif;
 }
 
 .movie-title {
   font-size: 35px;
-  font-family: 'Righteous', cursive;
   grid-column: 2 / span 2;
   letter-spacing: 1.5px;
 }
