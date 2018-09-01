@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import SearchInput from './components/SearchInput';
 import MovieCard from './components/MovieCard';
+import ErrorCard from './components/ErrorCard';
 
 import './App.css';
 
@@ -54,13 +55,17 @@ class App extends Component {
           className="input-container"
           handleSearch={this.handleSearch}
         />
-        <MovieCard
-          movieTitle={this.state.movieTitle}
-          movieYear={this.state.movieYear}
-          movieDirector={this.state.movieDirector}
-          movieDescription={this.state.movieDescription}
-          moviePoster={this.state.moviePoster}
-        />
+        {!this.state.moviePoster ? (
+          <ErrorCard />
+        ) : (
+          <MovieCard
+            movieTitle={this.state.movieTitle}
+            movieYear={this.state.movieYear}
+            movieDirector={this.state.movieDirector}
+            movieDescription={this.state.movieDescription}
+            moviePoster={this.state.moviePoster}
+          />
+        )}
       </div>
     );
   }

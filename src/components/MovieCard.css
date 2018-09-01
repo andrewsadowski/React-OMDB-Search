@@ -21,6 +21,7 @@
 }
 
 .movie-title {
+  border: solid 1px black;
   font-size: 35px;
   grid-column: 2 / span 2;
   letter-spacing: 1.5px;
@@ -29,6 +30,7 @@
 .movie-year {
   grid-column: 2/3;
   grid-row: 4/5;
+  border: solid 1px black;
 }
 
 .movie-description {
@@ -36,15 +38,18 @@
   grid-row-start: 2;
   width: 150px;
   padding: 10px;
+  border: solid 1px black;
 }
 
 .movie-director {
   grid-column: 2/ 3;
   grid-row: 3 / 3;
   padding: 10px;
+  border: solid 1px black;
 }
 
 .movie-image {
   grid-column: 3 / 4;
   grid-row: 2 / span 3;
+  border: solid 1px black;
 }
