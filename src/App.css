@@ -17,8 +17,8 @@ body {
   padding: 20px;
   color: white;
 }
-
-.input-container {
-  display: grid;
-  grid-template-columns: fit-content(100%);
-}
+/* .input-container {
+  display: flex;
+  justify-content: center;
+  max-width: fit-content;
+} */

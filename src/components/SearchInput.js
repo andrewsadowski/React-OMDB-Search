@@ -20,7 +20,7 @@ class SearchInput extends Component {
       <form className="form-container" onSubmit={this.getSearch}>
         <input
           className="input-container"
-          autocomplete="off"
+          autoComplete="off"
           type="text"
           name="movieSearch"
           ref={this.searchRef}

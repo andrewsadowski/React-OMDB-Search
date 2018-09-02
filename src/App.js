@@ -55,7 +55,8 @@ class App extends Component {
           className="input-container"
           handleSearch={this.handleSearch}
         />
-        {!this.state.moviePoster ? (
+        {!this.state.moviePoster ||
+        this.state.moviePoster === 'N/A' ? (
           <ErrorCard />
         ) : (
           <MovieCard
