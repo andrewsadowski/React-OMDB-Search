@@ -1,11 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Spring } from 'react-spring';
 
 export default class ErrorCard extends Component {
   render() {
     return (
       <div>
-        <h1>Try searching for a different movie...</h1>
+        <div>
+          <h1>Try searching for a different movie...</h1>
+        </div>
       </div>
-    )
+    );
   }
 }
