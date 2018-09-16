@@ -19,6 +19,7 @@ class App extends Component {
       movieTitle: 'Caddyshack',
       movieDirector: 'Harold Ramis',
       movieYear: '1981',
+      imdbID: 'tt0080487',
       movieDescription:
         'An exclusive golf course has to deal with a brash new member and a destructive dancing gopher.',
       moviePoster:
@@ -39,6 +40,7 @@ class App extends Component {
         this.setState({
           movieTitle: res.data.Title,
           movieDirector: res.data.Director,
+          imdbID: res.data.imdbID,
           movieYear: res.data.Year,
           moviePoster: res.data.Poster,
           movieDescription: res.data.Plot
@@ -68,6 +70,7 @@ class App extends Component {
             movieTitle={this.state.movieTitle}
             movieYear={this.state.movieYear}
             movieDirector={this.state.movieDirector}
+            imdbID={this.state.imdbID}
             movieDescription={this.state.movieDescription}
             moviePoster={this.state.moviePoster}
           />

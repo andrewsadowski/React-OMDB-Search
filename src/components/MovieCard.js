@@ -1,15 +1,21 @@
-import React from "react";
-import "./MovieCard.css";
+import React from 'react';
+import './MovieCard.css';
 
 const MovieCard = ({
   movieTitle,
   movieDescription,
   movieDirector,
+  imdbID,
   movieYear,
   moviePoster
 }) => {
   return (
-    <div className="movie-container">
+    <div
+      className="movie-container"
+      onClick={() =>
+        window.open(`https://www.imdb.com/title/${imdbID}`)
+      }
+    >
       <p className="movie-title">{movieTitle}</p>
       <p className="movie-description">
         Plot:
