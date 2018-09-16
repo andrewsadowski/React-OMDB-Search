@@ -7,7 +7,6 @@ import ErrorCard from './components/ErrorCard';
 import './App.css';
 
 /**
- * TODO: make whole MovieCard link to IMDB link
  * TODO: animate with React Spring
  */
 
