@@ -27,7 +27,6 @@ class App extends Component {
   }
 
   getMovie = () => {
-    console.log('getmovie');
     axios
       .get(
         `https://www.omdbapi.com/?apikey=16cd9897&t=${
