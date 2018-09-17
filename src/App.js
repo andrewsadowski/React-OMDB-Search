@@ -1,28 +1,29 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import SearchInput from './components/SearchInput';
-import MovieCard from './components/MovieCard';
-import ErrorCard from './components/ErrorCard';
+import React, { Component } from "react";
+import axios from "axios";
+import SearchInput from "./components/SearchInput";
+import MovieCard from "./components/MovieCard";
+import ErrorCard from "./components/ErrorCard";
 
-import './App.css';
+import "./App.css";
 
 /**
- * TODO: animate with React Spring
+ * TODO: animate mounting and unmounting of MovieCard
+ *       with React Spring
  */
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      term: '',
-      movieTitle: 'Caddyshack',
-      movieDirector: 'Harold Ramis',
-      movieYear: '1981',
-      imdbID: 'tt0080487',
+      term: "",
+      movieTitle: "Caddyshack",
+      movieDirector: "Harold Ramis",
+      movieYear: "1981",
+      imdbID: "tt0080487",
       movieDescription:
-        'An exclusive golf course has to deal with a brash new member and a destructive dancing gopher.',
+        "An exclusive golf course has to deal with a brash new member and a destructive dancing gopher.",
       moviePoster:
-        'https://ia.media-imdb.com/images/M/MV5BY2I1NWE2NzctNzNkYS00Nzg5LWEwZTQtN2I3Nzk3MTQwMDY2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg'
+        "https://ia.media-imdb.com/images/M/MV5BY2I1NWE2NzctNzNkYS00Nzg5LWEwZTQtN2I3Nzk3MTQwMDY2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
     };
   }
 
@@ -61,7 +62,7 @@ class App extends Component {
           handleSearch={this.handleSearch}
         />
         {!this.state.moviePoster ||
-        this.state.moviePoster === 'N/A' ? (
+        this.state.moviePoster === "N/A" ? (
           <ErrorCard />
         ) : (
           <MovieCard

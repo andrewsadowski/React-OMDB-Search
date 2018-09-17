@@ -1,5 +1,5 @@
-import React from 'react';
-import './MovieCard.css';
+import React from "react";
+import "./MovieCard.css";
 
 const MovieCard = ({
   movieTitle,
